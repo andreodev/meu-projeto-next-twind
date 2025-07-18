@@ -1,103 +1,229 @@
-import Image from "next/image";
+'use client';
+import { useState } from 'react';
+import Image from 'next/image';
+import SuccessSection from './pages/womens';
+import GoalSelection from './pages/goalSelection';
+import StressSleepSection from './pages/StressSleepSection';
+import Sintomas from './pages/sintomes';
+import TargetZones from './pages/areaPage';
+import WeightChange from './pages/peso';
+import SimilarIssues from './pages/similar';
+import StartingPoint from './pages/startingPoint';
+import DreamBody from './pages/dreamBody';
+import BestShape from './pages/bestShap';
+import PilatesExperience from './pages/pilatesXp';
+import Struggles from './pages/struggles';
+import ComfortWithExercise from './pages/comfortWithExercise';
+import MessageParams from './pages/messageParams';
+import HeightInput from './pages/heigthInput';
+import WeightInput from './pages/wigthInput';
+import AgeInput from './pages/yearsInput';
+import PilatesPriority from './pages/PilatesPriority';
+import DailyActivity from './pages/dailyActivity';
+import ProfileResult from './pages/ProfileResult';
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+	const ages = ['39-45', '46-50', '51-60', '60+'];
+	const [selectedAge, setSelectedAge] = useState<string | null>(null);
+	const [step, setStep] = useState<
+		| 'age'
+		| 'success'
+		| 'goal'
+		| 'stressSleep'
+		| 'sintomas'
+		| 'targetZones'
+		| 'weightChange'
+		| 'similarIssues'
+		| 'startingPoint'
+		| 'dreamBody'
+		| 'bestShape'
+		| 'pilatesExperience'
+		| 'struggles'
+		| 'comfortWithExercise'
+		| 'successSection'
+		| 'heightInput'
+		| 'weightInput'
+		| 'ageInput'
+		| 'pilatesPriority'
+		| 'dailyActivity'
+		| 'profileResult'
+	>('age');
+	const [selectedGoal, setSelectedGoal] = useState<string | null>(null);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+	const handleAgeSelect = (age: string) => {
+		setSelectedAge(age);
+		setStep('success');
+	};
+
+	const handleOngoing = () => {
+		setStep('goal');
+	};
+
+	return (
+		<>
+			{step === 'age' && (
+				<div className="min-h-screen flex flex-col bg-white text-gray-900">
+					<header className="w-full max-w-4xl mx-auto flex justify-between items-center p-4">
+						<div className="flex items-center gap-2 font-bold text-xl">
+							PILATES
+							<span className="text-xs font-normal bg-gray-200 px-2 py-0.5 rounded-full text-gray-700">
+								by HARNA
+							</span>
+						</div>
+						<div className="flex items-center gap-2 text-sm">
+							<span>EN</span>
+							<span className="text-xl select-none">⌄</span>
+							<button className="text-2xl ml-2" aria-label="menu">
+								☰
+							</button>
+						</div>
+					</header>
+
+					<main className="flex flex-col items-center justify-center flex-grow text-center px-4 max-w-6xl mx-auto w-full">
+						<h1 className="text-3xl sm:text-4xl font-extrabold leading-tight max-w-lg mx-auto">
+							Asian Pilates Program{' '}
+							<span className="text-pink-700">for Menopausal Women</span>
+						</h1>
+						<p className="mt-4 text-gray-600">According to your age</p>
+						<p className="mt-1 text-sm font-semibold text-gray-500">
+							1‑MINUTE QUIZ
+						</p>
+
+						<div className="mt-12 w-full flex flex-col-reverse sm:flex-row sm:justify-center sm:items-center sm:min-h-[400px] gap-10">
+							{/* Botões de idade */}
+							<ul className="flex flex-col gap-4 w-full max-w-xs">
+								{ages.map((age) => (
+									<li key={age}>
+										<button
+											onClick={() => handleAgeSelect(age)}
+											className="w-full border border-gray-300 rounded-xl py-3 px-5 text-base font-medium text-gray-800 hover:bg-gray-50 transition flex items-center justify-between tracking-wide"
+										>
+											{age} <span className="text-lg font-bold">→</span>
+										</button>
+									</li>
+								))}
+							</ul>
+
+							{/* Imagem ao lado */}
+							<div className="hidden sm:flex justify-center items-center">
+								<Image
+									src="/man.png"
+									alt="Muscular man"
+									width={280}
+									height={380}
+									className="object-contain"
+									priority
+								/>
+							</div>
+						</div>
+					</main>
+
+					<footer className="py-4 text-xs text-gray-500 text-center max-w-md mx-auto px-4">
+						By choosing your age and continuing, you agree to our{' '}
+						<a href="#" className="underline">
+							Terms of Service
+						</a>
+						,{' '}
+						<a href="#" className="underline">
+							Privacy Policy
+						</a>{' '}
+						and{' '}
+						<a href="#" className="underline">
+							Cookie Policy
+						</a>
+						.
+					</footer>
+				</div>
+			)}
+
+			{step === 'success' && <SuccessSection onGoing={handleOngoing} />}
+
+			{step === 'goal' && (
+				<GoalSelection
+					selectedGoal={selectedGoal}
+					setSelectedGoal={setSelectedGoal}
+					setStep={setStep}
+				/>
+			)}
+
+			{step === 'stressSleep' && (
+				<StressSleepSection onContinue={() => setStep('sintomas')} />
+			)}
+
+			{step === 'sintomas' && (
+				<Sintomas onContinue={() => setStep('targetZones')} />
+			)}
+
+			{step === 'targetZones' && (
+				<TargetZones onContinue={() => setStep('weightChange')} />
+			)}
+
+			{step === 'weightChange' && (
+				<WeightChange onContinue={() => setStep('similarIssues')} />
+			)}
+
+			{step === 'similarIssues' && (
+				<SimilarIssues onContinue={() => setStep('startingPoint')} />
+			)}
+
+			{step === 'startingPoint' && (
+				<StartingPoint onSelect={() => setStep('dreamBody')} />
+			)}
+
+			{step === 'dreamBody' && (
+				<DreamBody onSelect={() => setStep('bestShape')} />
+			)}
+
+			{step === 'bestShape' && (
+				<BestShape onSelect={() => setStep('pilatesExperience')} />
+			)}
+
+			{step === 'pilatesExperience' && (
+				<PilatesExperience onSelect={() => setStep('struggles')} />
+			)}
+
+			{step === 'struggles' && (
+				<Struggles onContinue={() => setStep('comfortWithExercise')} />
+			)}
+
+			{step === 'comfortWithExercise' && (
+				<ComfortWithExercise onContinue={() => setStep('successSection')} />
+			)}
+
+			{step === 'successSection' && (
+				<MessageParams onGoing={() => setStep('heightInput')} />
+			)}
+
+			{step === 'heightInput' && (
+				<HeightInput onContinue={() => setStep('weightInput')} />
+			)}
+
+			{step === 'weightInput' && (
+				<WeightInput onContinue={() => setStep('ageInput')} height={230} />
+			)}
+
+			{step === 'ageInput' && (
+				<AgeInput onContinue={() => setStep('pilatesPriority')} />
+			)}
+
+			{step === 'pilatesPriority' && (
+				<PilatesPriority onContinue={() => setStep('dailyActivity')} />
+			)}
+
+			{step === 'dailyActivity' && (
+				<DailyActivity onContinue={() => setStep('profileResult')} />
+			)}
+
+			{step === 'profileResult' && (
+				<ProfileResult
+					bmi={13.24}
+					lifestyle="Sedentary"
+					bodyType="Mid-sized"
+					fitnessLevel="Beginner"
+					trainingType="Gentle Pilates"
+					onContinue={() => console.log('Next step')}
+				/>
+			)}
+		</>
+	);
 }
