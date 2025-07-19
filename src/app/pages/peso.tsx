@@ -61,7 +61,7 @@ export default function WeightChange({
 				{/* Image on right */}
 				<div className="hidden sm:block w-[160px] flex-shrink-0">
 					<img
-						src="/woman-fit-red-outfit.png"
+						src="https://s3.harna-app.com/quizes_images/59da77e5-7bef-4678-989e-511bc970cf9f.png"
 						alt="Fit woman in red outfit"
 						className="w-full h-auto rounded-lg object-contain"
 						loading="lazy"

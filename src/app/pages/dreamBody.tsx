@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const bodyTypes = [
-	{ label: 'Curvy', image: '/curvy.jpg' },
-	{ label: 'Thin', image: '/thin.jpg' },
-	{ label: 'Normal', image: '/normal.jpg' },
-	{ label: 'In shape', image: '/in-shape.jpg' },
-	{ label: "I'm OK with my body", image: '/ok-body.jpg' },
+	{ label: 'Curvy', image: 'https://s3.harna-app.com/static_assets/images/quizes/steps/basic/bodytype-border/curvy.jpg' },
+	{ label: 'Thin', image: 'https://s3.harna-app.com/static_assets/images/quizes/steps/basic/bodytype-border/thin.jpg' },
+	{ label: 'Normal', image: 'https://s3.harna-app.com/static_assets/images/quizes/steps/basic/bodytype-border/toned.jpg' },
+	{ label: 'In shape', image: 'https://s3.harna-app.com/static_assets/images/quizes/steps/basic/bodytype-border/bikini_body.jpg' },
+	{ label: "I'm OK with my body", image: 'https://s3.harna-app.com/static_assets/images/quizes/steps/basic/bodytype-border/slim.jpg' },
 ];
 
 type Props = {

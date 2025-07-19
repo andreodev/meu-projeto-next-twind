@@ -17,7 +17,7 @@ export default function SimilarIssues({ onContinue }: Props) {
 
 			{/* Image */}
 			<img
-				src="/muscular-man-pointing.jpg" // troque pelo caminho correto
+				src="https://s3.harna-app.com/quizes_images/ae946088-2dc9-47c2-8624-816626a942db.jpg" // troque pelo caminho correto
 				alt="Muscular man pointing up"
 				className="w-full max-w-md rounded-2xl mb-8 object-cover"
 			/>

@@ -16,17 +16,17 @@ const options: ActivityOption[] = [
 	{
 		label: 'Sedentary',
 		subtitle: 'I spend most of the day sitting',
-		image: '/images/sedentary.jpg', // você deve fornecer o caminho real da imagem
+		image: 'https://s3.harna-app.com/quizes_images/27b48633-2120-445a-8281-84e2f6f1db16.png', // você deve fornecer o caminho real da imagem
 	},
 	{
 		label: 'Moderate activity',
 		subtitle: 'I take active breaks',
-		image: '/images/moderate.jpg',
+		image: 'https://s3.harna-app.com/static_assets/images/quizes/steps/basic/typicalDay/moderate_activity.jpg',
 	},
 	{
 		label: 'I’m unstoppable',
 		subtitle: "I'm on my feet all day long",
-		image: '/images/unstoppable.jpg',
+		image: 'https://s3.harna-app.com/quizes_images/ffbf7abd-3b11-4a58-bba2-2c43b9c14d62.png',
 	},
 ];
 

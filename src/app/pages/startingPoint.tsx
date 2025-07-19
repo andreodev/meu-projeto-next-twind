@@ -4,22 +4,22 @@ const options = [
 	{
 		label: 'Skinny',
 		description: 'Looking to gain muscle mass',
-		image: '/skinny.jpg', // substitua pelo caminho correto da imagem
+		image: 'https://s3.harna-app.com/static_assets/images/quizes/steps/basic/bodytype-border/slim.jpg', // substitua pelo caminho correto da imagem
 	},
 	{
 		label: 'Skinny fat',
 		description: 'Skinny, but need to tone up and lose some weight',
-		image: '/skinny-fat.jpg',
+		image: 'https://s3.harna-app.com/static_assets/images/quizes/steps/basic/bodytype-border/mid_sized.jpg',
 	},
 	{
 		label: 'Muscular with some fat',
 		description: 'Want to reduce fat, keep muscle',
-		image: '/muscular-some-fat.jpg',
+		image: 'https://s3.harna-app.com/static_assets/images/quizes/steps/basic/bodytype-border/heavier_side.jpg',
 	},
 	{
 		label: 'Overweight',
 		description: 'Looking for a quick and healthy way to lose weight',
-		image: '/overweight.jpg',
+		image: 'https://s3.harna-app.com/static_assets/images/quizes/steps/basic/bodytype-border/overweight.jpg',
 	},
 ];
 

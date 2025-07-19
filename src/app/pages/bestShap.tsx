@@ -63,10 +63,10 @@ export default function BestShape({ onSelect }: Props) {
 					</ul>
 				</div>
 
-				<img
-					src="/woman-pink-outfit.png"
+				<	img
+					src="https://s3.harna-app.com/quizes_images/cfbdfd19-5b91-476a-aba5-f76165dd0519.png"
 					alt="Woman in pink fitness outfit"
-					className="w-32 h-auto rounded-md object-cover select-none"
+					className="w-32 h-auto rounded-md  select-none"
 					draggable={false}
 				/>
 			</div>

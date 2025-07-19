@@ -9,6 +9,7 @@ interface ProfileResultProps {
 	onContinue: () => void;
 }
 
+
 export default function ProfileResult({
 	bmi,
 	lifestyle,
@@ -85,7 +86,7 @@ export default function ProfileResult({
 				</div>
 				{/* Placeholder avatar - substitua por imagem real se quiser */}
 				<img
-					src="/images/female-avatar.png"
+					src="https://s3.harna-app.com/static_assets/images/quizes/steps/basic/summary/pilates-rose/slim.png"
 					alt="Profile avatar"
 					className="w-36 h-auto object-contain"
 				/>
@@ -101,6 +102,7 @@ export default function ProfileResult({
 			<button
 				onClick={onContinue}
 				className="bg-pink-700 text-white font-semibold py-3 px-10 rounded-full hover:bg-pink-800 transition"
+				
 			>
 				Continue
 			</button>

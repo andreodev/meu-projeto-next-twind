@@ -1,13 +1,13 @@
 import { useState } from 'react';
 
 const areas = [
-	{ label: 'A double chin', img: '/areas/double-chin.jpg' },
-	{ label: 'Sagging arms', img: '/areas/sagging-arms.jpg' },
-	{ label: 'Droopy breasts', img: '/areas/droopy-breasts.jpg' },
-	{ label: 'Belly fat', img: '/areas/belly-fat.jpg' },
-	{ label: 'Fat on knees', img: '/areas/fat-on-knees.jpg' },
-	{ label: 'Saddlebags', img: '/areas/saddlebags.jpg' },
-	{ label: 'Flabby buttocks', img: '/areas/flabby-buttocks.jpg' },
+	{ label: 'A double chin', img: 'https://s3.harna-app.com/static_assets/images/quizes/steps/basic/target-zones-square/double.png' },
+	{ label: 'Sagging arms', img: 'https://s3.harna-app.com/static_assets/images/quizes/steps/basic/target-zones-square/arms.png' },
+	{ label: 'Droopy breasts', img: 'https://s3.harna-app.com/static_assets/images/quizes/steps/basic/target-zones-square/breasts.png' },
+	{ label: 'Belly fat', img: 'https://s3.harna-app.com/static_assets/images/quizes/steps/basic/target-zones-square/belly.png' },
+	{ label: 'Fat on knees', img: 'https://s3.harna-app.com/static_assets/images/quizes/steps/basic/target-zones-square/knees.png' },
+	{ label: 'Saddlebags', img: 'https://s3.harna-app.com/static_assets/images/quizes/steps/basic/target-zones-square/saddlebags.png' },
+	{ label: 'Flabby buttocks', img: 'https://s3.harna-app.com/static_assets/images/quizes/steps/basic/target-zones-square/buttocks.png' },
 	{ label: 'Other areas', img: null },
 	{ label: 'None of them', img: null },
 ];

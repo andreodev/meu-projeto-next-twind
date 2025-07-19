@@ -4,17 +4,17 @@ const struggles = [
 	{
 		label: 'Sensitive back',
 		imgSrc:
-			'https://cdn.pixabay.com/photo/2017/08/07/18/03/woman-2609717_640.jpg', // substitua pela URL correta da imagem
+			'https://s3.harna-app.com/quizes_images/058e74d3-ed6c-4abc-a4f9-0eba9088f69f.png', // substitua pela URL correta da imagem
 	},
 	{
 		label: 'Sensitive knees',
 		imgSrc:
-			'https://cdn.pixabay.com/photo/2017/08/07/18/04/woman-2609718_640.jpg', // substitua pela URL correta da imagem
+			'https://s3.harna-app.com/quizes_images/d7a3b7ef-9402-42a5-a5ad-cf6029b48c39.png', // substitua pela URL correta da imagem
 	},
 	{
 		label: 'Hip surgery',
 		imgSrc:
-			'https://cdn.pixabay.com/photo/2017/08/07/18/05/woman-2609719_640.jpg', // substitua pela URL correta da imagem
+			'https://s3.harna-app.com/quizes_images/4adae6bf-6f95-47ee-97ba-964daa35f2ea.png', // substitua pela URL correta da imagem
 	},
 	{ label: 'Other', imgSrc: null },
 	{ label: 'None of the above', imgSrc: null },
@@ -57,7 +57,7 @@ export default function Struggles({ onContinue }: Props) {
 				Do you struggle with any of the following?
 			</h2>
 			<p className="text-center text-gray-500 mb-6 max-w-md">
-				Please select all that apply
+				Please select all that app
 			</p>
 
 			{/* Options */}
@@ -66,7 +66,7 @@ export default function Struggles({ onContinue }: Props) {
 					<li key={label}>
 						<button
 							type="button"
-							onClick={() => toggleItem(label)}
+							onClick={() => onContinue(selectedItems)}
 							className={`w-full flex items-center gap-4 rounded-xl border px-5 py-4 transition
                 ${
 									selectedItems.includes(label)
