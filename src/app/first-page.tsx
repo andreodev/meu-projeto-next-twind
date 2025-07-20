@@ -32,6 +32,7 @@ import ProgressCircle from './pages/animationFinal';
 import EmailForm from './pages/email';
 import { AnimatePresence } from 'framer-motion';
 import { motion } from "framer-motion"
+import { BsArrowRight } from 'react-icons/bs';
 
 
 export default function HomeClient() {
@@ -129,7 +130,7 @@ export default function HomeClient() {
 											onClick={() => handleAgeSelect(age)}
 											className="w-full border border-gray-300 rounded-xl py-3 px-5 text-base font-medium text-gray-800 hover:bg-gray-50 transition flex items-center justify-between tracking-wide"
 										>
-											{age} <span className="text-lg font-bold">→</span>
+											{age} <BsArrowRight />
 										</button>
 									</li>
 								))}
